@@ -2,16 +2,16 @@
 
 
 # Install Go
-#wget https://go.dev/dl/go1.20.6.linux-amd64.tar.gz
+wget https://go.dev/dl/go1.20.6.linux-amd64.tar.gz
 
 # Command to remove existing Go installation and extract new tarball
-#sudo rm -rf /usr/local/go && tar -C /usr/local -xzf go1.20.6.linux-amd64.tar.gz
+sudo rm -rf /usr/local/go && tar -C /usr/local -xzf go1.20.6.linux-amd64.tar.gz
 
 # Add export statement to $HOME/.profile
-#echo 'export PATH=$PATH:/usr/local/go/bin' >> $HOME/.profile
+echo 'export PATH=$PATH:/usr/local/go/bin' >> $HOME/.profile
 
 # Add export statement to /etc/profile
-#echo 'export PATH=$PATH:/usr/local/go/bin' | sudo tee -a /etc/profile
+echo 'export PATH=$PATH:/usr/local/go/bin' | sudo tee -a /etc/profile
 
 # First, install the package
 sudo apt install -y golang
@@ -120,7 +120,7 @@ go install github.com/tomnomnom/gf@latest
 echo 'export PATH=$PATH:/usr/local/go/bin/gf' >> $HOME/.profile
 echo 'export PATH=$PATH:/usr/local/go/bin/gf' | sudo tee -a /etc/profile
 cd ~
-cd mkdir .gf
+cd mkdir gf
 if [ $? -eq 0 ]; then
   echo "gf installation successful."
 else
@@ -130,7 +130,8 @@ fi
 # Clone Gf-Patterns
 cd ~/WebApp_Tools/
 git clone https://github.com/1ndianl33t/Gf-Patterns
-mv ~/WebApp_Tools/Gf-Patterns/*.json ~/.gf
+mv ~/WebApp_Tools/Gf-Patterns/*.json ~/gf
+mv ~/gf ~/.gf
 if [ $? -eq 0 ]; then
   echo "Gf-Patterns installation successful."
 else
