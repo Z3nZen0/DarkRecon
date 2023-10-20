@@ -1,0 +1,54 @@
+Revision 3 (July 12, 20203)
+- Added ParamSpider
+- Addded GF usage with ParamSpider 
+- Added ParamSpider usage with the single tool option and it will pipe findings to GF automatically
+
+Revision 4 (July 13, 2023) 
+- Added Dalfox functionality 
+- Added AutoSSRF Functionality 
+- Added the option to change the HTTP method for Dalfox in the single tool option 
+- Added the ability to use AutoSSRF in the single tool options
+
+Revision 5
+- Added in the Arjun tool for use in the single tool options 
+- Modified the use of the Arjun tool to drop output file and then send it to GF for XSS, SSRF, openredirect and LFI findings 
+
+Revision 6
+- Found an issue within the command for the automated Nuclei making it so that it wouldn't be able to scan. 
+- Added Nmap scanning to the automated scan
+- NMAP added to single scan options
+- NMAP DNS resolution enabled so that urls will be accepted 
+- OpenRedirecx Added to both automated and Single tool options 
+- Added in NAMP flag to enable DNS resolution to Quad 9 DNS 
+
+Revision 7
+- Corrected Nuclei command that pulled urls from the HTTPx list for scanning and replaced it with just using the provided url
+-Corrected an issue with the Subfinder command which wouldn't allow it to scan properly and made it now take the domain and scan that
+-Issue with the python command for OpenRedirecx and made it now use python 3 vs 3.7
+
+Revision 8
+- Found that the change to the nuclei command was missed in option 1 
+- HTTPx and DNSx are having issues and have been disabled until it can be corrected 
+- Issue with NMAP scan needing sudo permissions resolved 
+- Added art logo 
+- Removed Sudo permission check from update feature 
+- Added Dalfox and NMAP DB to update feature 
+- Removed lines that requested for Flags to be added to tools in the single tool mode due to bug issues
+- Fixed issue with NMAP commands and now it is accepting the url
+- Made change to Dalfox and AutoSSRF commands in option 1 to make it use the file feature 
+
+Revision 9
+- Added AMASS to replace the use of DNSx and Subfinder
+
+Revision 10 
+- HTTPX, DNSx and Subfinder have been fixed and added back to the autorecon. 
+- found an issue with GF and it not getting the patterns. To resovle run the "install_webapp_tools  
+
+Revision 11
+- Added in more commenting to better descript functions 
+- adjusted when running the Update option that the Nuclei Templates be updated
+
+Revision 12 
+- to reflect the changes in the setup script changed the call for GF from "gf" to "./gf"
+- changed the dalfox flags removing the remote payload flag from option 1 
+
