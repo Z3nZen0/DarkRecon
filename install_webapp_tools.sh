@@ -36,6 +36,22 @@ else
   echo -e "\e[31mInstallation Failed\e[0m"
 fi
 
+# Update package lists and install dependencies
+echo "Updating package lists and installing dependencies..."
+sudo apt update -y
+sudo apt upgrade -y
+sudo apt install -y dnsutils coreutils grep sed sed awk procps curl wget tar unzip git
+
+# Install SQLMap
+echo "Installing SQLMap..."
+cd /opt
+sudo wget https://github.com/sqlmapproject/sqlmap/archive/v1.3.12.tar.gz
+sudo tar -xzvf v1.3.12.tar.gz
+sudo mv sqlmap-1.3.12 sqlmap
+sudo rm v1.3.12.tar.gz
+sudo ln -s /opt/sqlmap/sqlmap.py /usr/bin/sqlmap
+sudo chown -R $USER:$USER /opt/sqlmap
+
 # WebApp Tools installation
 cd ~/
 mkdir WebApp_Tools

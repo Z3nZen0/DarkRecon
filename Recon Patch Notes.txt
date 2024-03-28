@@ -50,5 +50,12 @@ Revision 11
 
 Revision 12 
 - to reflect the changes in the setup script changed the call for GF from "gf" to "./gf"
-- changed the dalfox flags removing the remote payload flag from option 1 
+- changed the dalfox flags removing the remote payload flag from option 1
+
+Revison 14
+- This incorperated some other tools that were used in another toolset to increase the visibility of Dark Recon and also made it so that it will now provide a more indepth scan than before. 
+
+Revision 15
+- This updated `option1` function now accepts the URL and project name as input, checks for duplicate folder names, and appends a unique identifier to the folder name if a duplicate is found. The output files will now be saved in the project folder under the specified domain name.
+ 
 
