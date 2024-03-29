@@ -35,11 +35,11 @@ function getDomainName()
 
 function option1() 
 {
-  read -p "Please enter the URL to test and the project name (e.g. example.com_ProjectName): " url_and_project_name
-  url="${url_and_project_name%%_*}"
+  read -p "Please enter the URL to test: " url
+  read -p "Please enter the project name: " project_name
+  url=$(echo $url | tr -d '\n\r')
   domain=$(getDomainName $url)
-  project_name="${url_and_project_name#*_}"
-  folder_path="$(pwd)/$project_name"
+  folder_path="$(pwd)/${project_name}"
 
   # Check if a folder with the same name already exists in the current directory
   if [ -d "$folder_path" ]; then
@@ -105,7 +105,7 @@ function option1()
 
   echo "Web App Test completed for $url in the '$project_name' project folder: $folder_path/$domain"
 }
-```bash
+
 
 # This updated `option1` function now accepts the URL and project name as input, checks for duplicate folder names, and appends a unique identifier to the folder name if a duplicate is found. The output files will now be saved in the project folder under the specified domain name.
 
